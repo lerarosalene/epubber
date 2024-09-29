@@ -20,6 +20,7 @@ class PugPlugin {
         inlineRuntimeFunctions: false,
         name: "template",
         debug: false,
+        compileDebug: false,
       });
 
       return {
@@ -38,6 +39,7 @@ async function main() {
     outfile: p.join("dist", "index.js"),
     format: "cjs",
     bundle: true,
+    minify: true,
     plugins: [new PugPlugin()],
   });
 
