@@ -1,6 +1,6 @@
 {
   "name": "epubber",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Epubber - simple low-level API for creating .epub files",
   "scripts": {
     "build": "node build.js",
@@ -11,7 +11,10 @@
     "zip",
     "creator"
   ],
-  "files": ["dist/index.d.ts", "dist/index.js"],
+  "files": [
+    "dist/index.d.ts",
+    "dist/index.js"
+  ],
   "main": "dist/epubber.min.js",
   "author": "Larissa Rosalene <lerarosalene@outlook.com>",
   "license": "MIT",
