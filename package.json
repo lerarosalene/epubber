@@ -15,7 +15,8 @@
     "dist/index.d.ts",
     "dist/index.js"
   ],
-  "main": "dist/epubber.min.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "author": "Larissa Rosalene <lerarosalene@outlook.com>",
   "license": "MIT",
   "dependencies": {
