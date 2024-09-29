@@ -1,0 +1,23 @@
+doctype xml
+
+package(xmlns="http://www.idpf.org/2007/opf", unique-identifier="book-id", version="2.0", xmlns:dc="http://purl.org/dc/elements/1.1/")
+  metadata(xmlns:opf="http://www.idpf.org/2007/opf", xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance")
+    dc:identifier(id="book-id" opf:scheme="ISBN") #{self.id}
+    dc:title #{self.title}
+    if self.date
+      dc:date(opf:event="publication") #{self.date}
+    dc:language #{self.lang}
+    if self.modified
+      meta(property="dcterms:modfied") #{self.modified}
+  manifest
+    item(href="toc.ncx", id="ncx", media-type="application/x-dtbncx+xml")/
+    each entry in self.content
+      item(href=entry.path, id=entry.id, media-type=entry.mime)/
+  spine(toc="ncx")
+    each entry in self.content
+      if entry.addToSpine
+        itemref(idref=entry.id)/
+  guide
+    each entry in self.content
+      if entry.guideType
+        reference(href=entry.path, type=entry.guideType)/

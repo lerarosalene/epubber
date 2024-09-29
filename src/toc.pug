@@ -1,0 +1,22 @@
+doctype xml
+doctype ncx PUBLIC "-//NISO//DTD ncx 2005-1//EN" "http://www.daisy.org/z3986/2005/ncx-2005-1.dtd"
+
+mixin navPoint(point)
+  navPoint(id=point.id, playOrder=point.order)
+    navLabel
+      text #{point.label}
+    content(src=point.content)/
+    each child in point.children || []
+      +navPoint(child)
+
+ncx(xmlns="http://www.daisy.org/z3986/2005/ncx/", version="2005-1")
+  head
+    meta(content="book-id", name="dtb:uid")/
+    meta(content=self.depth name="dtb:depth")/
+    meta(content="-1", name="dtb:totalPageCount")/
+    meta(content="-1", name="dtb:maxPageNumber")/
+  docTitle
+    text #{self.title}
+  navMap
+    each point in self.navPoints
+      +navPoint(point)
