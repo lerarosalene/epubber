@@ -125,7 +125,7 @@ main().catch((error) => {
 
 ### In Browser
 
-See [examples/browser/README.md](examples/browser/README.md) for details.
+See [examples/browser/](examples/browser/) for details.
 
 ### Credits
 
