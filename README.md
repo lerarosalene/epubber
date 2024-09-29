@@ -1,5 +1,11 @@
 ## Epubber - simple low-level API for creating .epub files
 
+[![NPM Version](https://img.shields.io/npm/v/epubber)](https://npmjs.com/package/epubber)
+
+### Install
+
+`npm install epubber`
+
 ### Documentation
 
 Not (yet) available. See comprehensive example below.
